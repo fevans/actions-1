@@ -16,5 +16,5 @@ jobs:
 
         -  name: Executing shell script
            run: |
-              chmod +x
+              chmod +x generate-ascii.sh
               ./generate-ascii.sh
