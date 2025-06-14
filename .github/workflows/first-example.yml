@@ -14,8 +14,14 @@ jobs:
             ls
             cat README.md
 
-        # -  name: list files
-        #    run: ls 
+        -  name: Install cowsay
+           run: sudo apt-get install cowsay -y
 
-        # -  name: Read Readme
-        #    run: cat README.md
+        -  name: Generate ASCII
+           run: cowsay -f dragon "I will rain fire on you!" >> dragon.txt
+
+        -  name: Test File Exists
+           run: grep -i "dragon" dragon.txt
+
+        -  name: Read File
+           run: cat dragon.txt
