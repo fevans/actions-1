@@ -8,11 +8,14 @@ jobs:
         -  name: Checkout
            uses: actions/checkout@v4.2.2
            
-        -  name: Welcome Message
-           run: echo "My first GitHub Action"
+        -  name: List and Read files
+           run: |
+            echo "First Workflow"
+            ls
+            cat README.md
 
-        -  name: list files
-           run: ls 
+        # -  name: list files
+        #    run: ls 
 
-        -  name: Read Readme
-           run: cat README.md
+        # -  name: Read Readme
+        #    run: cat README.md
