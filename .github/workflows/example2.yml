@@ -1,0 +1,38 @@
+name: example-2-wkflow
+on: push
+
+jobs:
+    build_job:
+        runs-on: ubuntu-latest
+        steps:
+        -  name: Checkout
+           uses: actions/checkout@v4.2.2
+           
+        # -  name: List and Read files
+        #    run: |
+        #     echo "First Workflow"
+        #     ls
+        #     cat README.md
+
+        -  name: Install and execute cowsay
+           run: |
+              sudo apt-get install cowsay -y
+              cowsay -f dragon "I am dragon and will rain fire on you!" >> dragon.txt
+    test_job:
+        runs-on: ubuntu-latest
+        steps:
+        -  name: Check file exists
+           run: grep -i "dragon" dragon.txt    
+    
+    deploy_job:
+        runs-on: ubuntu-latest
+        steps:
+        
+        -  name: List and Read files
+           run: |
+            ls
+            cat README.md
+
+        -  name: Deploy-artefacts
+           run: echo "Deploying..."
+
