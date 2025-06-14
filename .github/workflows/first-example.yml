@@ -15,4 +15,6 @@ jobs:
         #     cat README.md
 
         -  name: Executing shell script
-           run: ./generate-ascii.sh
+           run: |
+              chmod +x
+              ./generate-ascii.sh
