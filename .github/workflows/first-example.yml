@@ -14,18 +14,5 @@ jobs:
         #     ls
         #     cat README.md
 
-        -  name: Install cowsay
-           run: sudo apt-get install cowsay -y
-
-        -  name: Generate ASCII
-           run: cowsay -f dragon "I am dragon and will rain fire on you!" >> dragon.txt
-
-        -  name: Test File Exists
-           run: grep -i "dragon" dragon.txt
-
-        -  name: Read File
-           run: cat dragon.txt
-
-        -  name: list repo files
-           run: ls -ltra
-           
+        -  name: Executing shell script
+           run: ./generate-ascii.sh
